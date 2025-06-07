@@ -285,6 +285,7 @@ const MovieInformation = () => {
 						autoPlay
 						title="trailer"
 						allow="autoPlay"
+						allowFullScreen
 						src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
 					/>
 				)}
