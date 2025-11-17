@@ -1,5 +1,5 @@
 import alanBtn from '@alan-ai/alan-sdk-web';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 // TODO: pause as alan AI isn't granting free interactions
 const Alan = () => {

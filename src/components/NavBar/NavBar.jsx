@@ -14,7 +14,6 @@ import { ColorModeContext } from '../../utils/ToggleColorMode';
 
 // nav comp
 const NavBar = () => {
-	// hooks
 	const { isAuthenticated, user } = useSelector(userSelector);
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const isMobile = useMediaQuery('(max-width:600px)');
@@ -22,7 +21,6 @@ const NavBar = () => {
 	const dispatch = useDispatch();
 	const classes = useStyles();
 
-	//fetch token & session ID
 	const token = localStorage.getItem('request_token');
 	const sessionIdFromLocalStorage = localStorage.getItem('session_id');
 

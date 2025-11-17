@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Box, Typography, Button } from '@mui/material';
 import { ExitToApp } from '@mui/icons-material';

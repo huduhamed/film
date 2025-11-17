@@ -1,11 +1,11 @@
-import React from 'react';
 import { Typography, Grid2, Tooltip, Grow, Rating } from '@mui/material';
 import { Link } from 'react-router-dom';
+
+// internal import
 import useStyles from './styles';
 
 // movie comp
 const Movie = ({ movie, i }) => {
-	// define classes
 	const classess = useStyles();
 
 	return (

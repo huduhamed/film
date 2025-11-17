@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 // color mode should come from react context
@@ -7,12 +7,10 @@ export const ColorModeContext = createContext();
 const ToggleColorMode = ({ children }) => {
 	const [mode, setMode] = useState('light');
 
-	// toggle color mode
 	const toggleColorMode = () => {
 		setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
 	};
 
-	// useMemo for theme changes
 	const theme = useMemo(
 		() =>
 			createTheme({

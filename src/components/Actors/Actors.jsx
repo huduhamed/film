@@ -18,7 +18,6 @@ const Actors = () => {
 	const { data: movies } = useGetMoviesByActorIdQuery({ id, page });
 	const classes = useStyles();
 
-	// edge cases
 	if (isFetching) {
 		return (
 			<Box display="flex" justifyContent="center" alignItems="center">
@@ -26,7 +25,7 @@ const Actors = () => {
 			</Box>
 		);
 	}
-	// error
+
 	if (error) {
 		return (
 			<Box display="flex" justifyContent="center" alignItems="center">

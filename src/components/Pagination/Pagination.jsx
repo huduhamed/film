@@ -1,4 +1,3 @@
-import React from 'react';
 import { Typography, Button } from '@mui/material';
 
 // internal imports
@@ -9,7 +8,6 @@ const Pagination = ({ currentPage, setPage, totalPages }) => {
 
 	if (totalPages === 0) return null;
 
-	// define handleprev & next
 	const handlePrev = () => {
 		if (currentPage != 1) {
 			setPage((prevPage) => prevPage - 1);

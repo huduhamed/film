@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
@@ -11,20 +11,17 @@ import { useLocation } from 'react-router-dom';
 
 // search comp
 const Search = () => {
-	// hooks
 	const [query, setQuery] = useState('');
 	const classes = useStyles();
 	const dispatch = useDispatch();
 	const location = useLocation();
 
-	// dispatch handleKeyDown
 	const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {
 			dispatch(searchMovie(query));
 		}
 	};
 
-	//hide search bar if on a movie info
 	if (location.pathname != '/') return null;
 
 	return (

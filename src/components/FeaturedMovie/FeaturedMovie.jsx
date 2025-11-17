@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Card, CardContent, CardMedia } from '@mui/material';
 

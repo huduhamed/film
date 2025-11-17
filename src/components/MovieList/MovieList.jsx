@@ -1,4 +1,3 @@
-import React from 'react';
 import Grid2 from '@mui/material/Grid2';
 
 // internal imports
@@ -7,7 +6,6 @@ import { Movie } from '..';
 
 // movie-list comp
 const MovieList = ({ movies, numberOfMovies, excludeFirst }) => {
-	// define classses
 	const classes = useStyles();
 
 	const startFrom = excludeFirst ? 1 : 0;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, CircularProgress, Typography, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 
@@ -8,7 +8,6 @@ import { FeaturedMovie, MovieList, Pagination } from '..';
 
 // define movies comp
 const Movies = () => {
-	// hooks
 	const [page, setPage] = useState(1);
 	const { genreIdOrCategoryName, searchQuery } = useSelector(
 		(state) => state.currentGenreOrCategory
@@ -22,7 +21,6 @@ const Movies = () => {
 
 	const numberOfMovies = lg ? 17 : 19;
 
-	// data loading state
 	if (isFetching) {
 		return (
 			<Box display="flex" justifyContent="center">
@@ -31,7 +29,6 @@ const Movies = () => {
 		);
 	}
 
-	// if no movie found
 	if (!data.results.length) {
 		return (
 			<Box display="flex" alignItems="center" mt="20px">
@@ -42,7 +39,6 @@ const Movies = () => {
 		);
 	}
 
-	// error handling
 	if (error) return 'Unfortunately an error occured.';
 	return (
 		<div>

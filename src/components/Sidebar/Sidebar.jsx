@@ -1,5 +1,5 @@
 // review useFffect hook or remove later
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import {
 	List,
 	ListItem,
@@ -20,7 +20,6 @@ import { useGetGenresQuery } from '../../services/TMDB';
 import genreIcons from '../../assets/genres';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
-//logos
 const blueLogo = 'https://fontmeme.com/permalink/250228/0991b8c9865596562beba546572aab28.png';
 const redLogo = 'https://fontmeme.com/permalink/250228/e66c4f5f6e7088308cce5c6adf693884.png';
 
@@ -41,7 +40,6 @@ const categories = [
 
 // sidebar comp TODO: fix props
 const Sidebar = ({ setMobileOpen }) => {
-	// hooks
 	const theme = useTheme();
 	const classes = useStyles();
 	const { data, isFetching } = useGetGenresQuery();

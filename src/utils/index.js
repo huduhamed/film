@@ -30,7 +30,6 @@ export const fetchToken = async () => {
 export const createSessionId = async () => {
 	const token = localStorage.getItem('request_token');
 
-	// check if token exist & generate new session ID
 	if (token) {
 		try {
 			const {

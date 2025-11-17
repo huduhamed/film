@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	Modal,
 	Typography,
@@ -32,6 +32,7 @@ import { MovieList } from '..';
 import axios from 'axios';
 import { userSelector } from '../../features/auth';
 
+// movie info
 const MovieInformation = () => {
 	const { user } = useSelector(userSelector);
 	const { id } = useParams();
@@ -60,7 +61,6 @@ const MovieInformation = () => {
 	const [isMovieFavorited, setIsMovieFavorited] = useState(false);
 	const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
 
-	// to track a favorited or watchlisted movie
 	useEffect(() => {
 		setIsMovieFavorited(!!favoriteMovies?.results?.find((movie) => movie?.id === data?.id));
 	}, [favoriteMovies, data]);
@@ -69,7 +69,6 @@ const MovieInformation = () => {
 		setIsMovieWatchlisted(!!watchlistMovies?.results?.find((movie) => movie?.id === data?.id));
 	}, [watchlistMovies, data]);
 
-	// edge cases
 	if (isFetching) {
 		return (
 			<Box display="flex" justifyContent="center" alignItems="center">
@@ -77,7 +76,7 @@ const MovieInformation = () => {
 			</Box>
 		);
 	}
-	// error
+
 	if (error) {
 		return (
 			<Box display="flex" justifyContent="center" alignItems="center">
@@ -86,7 +85,6 @@ const MovieInformation = () => {
 		);
 	}
 
-	// add movie to favorites, by making api calls to tmdb account
 	const addToFavorites = async () => {
 		try {
 			await axios.post(
@@ -106,7 +104,6 @@ const MovieInformation = () => {
 		}
 	};
 
-	// add movie to watchlist, by making api calls to tmdb account
 	const addToWatchlist = async () => {
 		try {
 			await axios.post(
